@@ -9,18 +9,19 @@
 #include "RightTriangle.h"
 
 //===============================================================================================================
+//CONSTRUCTORS - DESTRUCTOR
 
 /// @brief default constructor 
 RightTriangle::RightTriangle() 
 {
 
-	cout << "RightTriangle - Default Constructor - default" << endl;
+	cout << "RightTriangle - Default Constructor" << endl;
 
 	Init();
 
 }
 
-/// @brief constructor 
+/// @brief init constructor 
 /// @param _base base of the triangle
 /// @param _altitude altitude of the triangle
 RightTriangle::RightTriangle(float _base, float _altitude) 
@@ -67,6 +68,7 @@ RightTriangle::~RightTriangle()
 }
 
 //===============================================================================================================
+//OPERATOR OVERLOAD
 
 /// @brief overload of operator = 
 /// @param r reference to the object on the right side of the operator 
@@ -76,6 +78,7 @@ RightTriangle& RightTriangle::operator=(const RightTriangle& r)
 
 	cout << "RightTriangle - operator =" << endl;
 
+	Reset();
 	Init(r);
 
 	return *this;
@@ -96,6 +99,7 @@ bool RightTriangle::operator==(const RightTriangle& r)
 }
 
 //===============================================================================================================
+//INITIALIZERS
 
 /// @brief default initialization of the object, updating area, perimeter and hypotenuse values
 void RightTriangle::Init() 
@@ -117,6 +121,7 @@ void RightTriangle::Init()
 /// @param r reference to the object that should be copied 
 void RightTriangle::Init(const RightTriangle& r) 
 {
+
 	Reset();
 	base = r.base;
 	altitude = r.altitude;
@@ -125,11 +130,13 @@ void RightTriangle::Init(const RightTriangle& r)
 	Hypotenuse();
 	Area();
 	Perimeter();
+
 }
 
-/// @brief total reset of the object  
+/// @brief total reset of the object    
 void RightTriangle::Reset() 
 {
+
 	base = 0.;
 	altitude = 0.;
 
@@ -137,14 +144,18 @@ void RightTriangle::Reset()
 	Hypotenuse();
 	Area();
 	Perimeter();
+
 }
 
 //===============================================================================================================
+//COMPUTATIONAL
 
 /// @brief compute the hypotenuse of the triangle and stores it in the variable hypotenuse of the class RightTriangle
 void RightTriangle::Hypotenuse()
 {
+
 	hypotenuse = sqrt(pow(base, 2) + pow(altitude, 2));
+
 }
 
 /// @brief compute the area of the triangle and stores it in the variable area of the class Polygon
@@ -168,6 +179,7 @@ float RightTriangle::Perimeter()
 }
 
 //===============================================================================================================
+//SETTERS
 
 /// @brief set the base of the triangle, updating area, perimeter and hypotenuse values
 /// @param _base base value
@@ -217,9 +229,11 @@ void RightTriangle::SetDim(float _base, float _altitude)
 
 	SetBase(_base);
 	SetAltitude(_altitude);
+
 }
 
 //===============================================================================================================
+//GETTERS
 
 /// @brief get the base value of the triangle
 /// @return base value
@@ -247,7 +261,6 @@ void RightTriangle::GetDim(float& _base, float& _altitude)
 	_base = base;
 	_altitude = altitude;
 
-	return;
 }
 
 /// @brief get the hypotenuse value of the triangle
@@ -256,9 +269,11 @@ float RightTriangle::GetHypotenuse()
 {
 
 	return hypotenuse;
+
 }
 
 //===============================================================================================================
+//DIAGNOSTIC
 
 /// @brief write an error message 
 /// @param string message to be printed
@@ -300,11 +315,12 @@ void RightTriangle::Dump()
 }
 
 //===============================================================================================================
+//DRAW
 
-/// @brief to draw the triangle, just printing on the screen "triangle printed"
+/// @brief to draw the Triangle, just printing on the screen "Triangle printed"
 void RightTriangle::Draw()
 {
 
-	cout << "triangle printed" << endl;
+	cout << "Triangle printed" << endl;
 
 }

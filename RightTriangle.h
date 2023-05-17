@@ -4,7 +4,6 @@
 	Details.
 */
 
-
 #ifndef RIGHTTRIANGLE_H
 #define RIGHTTRIANGLE_H
 
@@ -20,6 +19,7 @@ using namespace std;
 class RightTriangle : public Polygon
 {
 private:
+
 	float base;
 	float altitude;
 	float hypotenuse;
@@ -66,7 +66,6 @@ public:
 	float GetAltitude();
 	void GetDim(float& _base, float& _altitude);
 	float GetHypotenuse();
-
 	/// @}
 
 	/// @name DRAWING
