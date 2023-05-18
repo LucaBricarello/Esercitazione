@@ -324,5 +324,7 @@ void Rhombus::Draw()
 {
 
 	cout << "Rhombus printed" << endl;
+	cout << "Area = " << area << endl;
+	cout << "Perimeter = " << perimeter << endl;
 
 }

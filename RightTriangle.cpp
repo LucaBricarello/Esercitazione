@@ -322,5 +322,7 @@ void RightTriangle::Draw()
 {
 
 	cout << "Triangle printed" << endl;
+	cout << "Area = " << area << endl;
+	cout << "Perimeter = " << perimeter << endl;
 
 }

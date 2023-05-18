@@ -297,5 +297,7 @@ void Rectangle::Draw()
 {
 
 	cout << "Rectangle printed" << endl;
+	cout << "Area = " << area << endl;
+	cout << "Perimeter = " << perimeter << endl;
 
 }

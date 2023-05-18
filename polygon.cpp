@@ -1,3 +1,9 @@
+/// \file polygon.cpp
+///	\brief class Polygon: implementation of the functions
+///
+///	Details.
+///
+
 #include "polygon.h"
 
 /// @brief default constructor 
