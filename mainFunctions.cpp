@@ -26,10 +26,10 @@ void DisplayMenu()
 	cout << endl;
 	cout << "Choose what to do:" << endl;
 	cout << endl;
-	cout << "1 - Rectangle" << endl;
-	cout << "2 - Rhombus" << endl;
-	cout << "3 - Right Triangle" << endl;
-	cout << "4 - Draw" << endl;
+	cout << "1 - Create a Rectangle" << endl;
+	cout << "2 - Create a Rhombus" << endl;
+	cout << "3 - Create a Right Triangle" << endl;
+	cout << "4 - Draw all the items in the list" << endl;
 	cout << "5 - Exit" << endl;
 	cout << endl;
 
@@ -59,17 +59,26 @@ void ChoiceManager(const int _choice, Polygon* _list[], int& _listCnt)
 	{
 	case 1:
 
-		CreateRectangle(_list, _listCnt);
+		if (CreateRectangle(_list, _listCnt))
+			cout << endl << "Rectangle created" << endl;
+		else
+			cout << endl << "Rectangle NOT created" << endl;
 		break;
 
 	case 2:
 
-		CreateRhombus(_list, _listCnt);
+		if(CreateRhombus(_list, _listCnt))
+			cout << endl << "Rhombus created" << endl;
+		else
+			cout << endl << "Rhombus NOT created" << endl;
 		break;
 
 	case 3:
 
-		CreateRightTriangle(_list, _listCnt);
+		if (CreateRightTriangle(_list, _listCnt))
+			cout << endl << "Triangle created" << endl;
+		else
+			cout << endl << "Triangle NOT created" << endl;
 		break;
 
 	case 4:
@@ -208,8 +217,7 @@ bool CreateRightTriangle(Polygon* _list[], int& _listCnt)
 /// @brief Draw all the objects in the list, (just printing perimeter and area for each object)
 /// @param _list list of all to objects
 /// @param _listCnt value reached by listCnt, it is the number of objects in the list
-/// @return true if everything went right, false if something went wrong
-bool Draw(Polygon* _list[], const int _listCnt)
+void Draw(Polygon* _list[], const int _listCnt)
 {
 
 	/// cycling the array to draw every object in it
@@ -222,15 +230,12 @@ bool Draw(Polygon* _list[], const int _listCnt)
 
 	}
 
-	return true;
-
 }
 
 /// @brief Deleting all the objects in the list
 /// @param _list list of all to objects
 /// @param _listCnt value reached by listCnt, it is the number of objects in the list
-/// @return true if everything went right, false if something went wrong
-bool ListDelete(Polygon* _list[], int& _listCnt)
+void ListDelete(Polygon* _list[], int& _listCnt)
 {
 
 	for (int i = 0; i < _listCnt; i++)
@@ -240,7 +245,5 @@ bool ListDelete(Polygon* _list[], int& _listCnt)
 	}
 
 	_listCnt = 0;
-
-	return true;
 
 }
